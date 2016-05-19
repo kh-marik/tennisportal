@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Tennis portal Admin page</title>
+    <title>Tennis Portal Admin page</title>
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -45,7 +45,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('admin/users') }}"><i class="fa fa-btn fa-users"></i>See users</a></li>
+                            <li><a href="{{ url('admin/users') }}"><i class="fa fa-btn fa-users"></i> See users</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -54,8 +54,8 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('admin/newscategories') }}"><i class="fa fa-btn fa-list-alt"></i>All categories</a></li>
-                            <li><a href="{{ url('admin/newscategories/create') }}"><i class="fa fa-btn fa-plus-square"></i>New category</a></li>
+                            <li><a href="{{ url('admin/newscategories') }}"><i class="fa fa-btn fa-list-alt"></i> All categories</a></li>
+                            <li><a href="{{ url('admin/newscategories/create') }}"><i class="fa fa-btn fa-plus-square"></i> New category</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -64,8 +64,8 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('admin/news') }}"><i class="fa fa-btn fa-list-alt"></i>All news</a></li>
-                            <li><a href="{{ url('admin/news/create') }}"><i class="fa fa-btn fa-plus-square"></i>New record</a></li>
+                            <li><a href="{{ url('admin/news') }}"><i class="fa fa-btn fa-list-alt"></i> All news</a></li>
+                            <li><a href="{{ url('admin/news/create') }}"><i class="fa fa-btn fa-plus-square"></i> New record</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -73,8 +73,8 @@
                             Interviews <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('admin/interviews') }}"><i class="fa fa-btn fa-list-alt"></i>All interviews</a></li>
-                            <li><a href="{{ url('admin/interviews/create') }}"><i class="fa fa-btn fa-plus-square"></i>New interview</a></li>
+                            <li><a href="{{ url('admin/interviews') }}"><i class="fa fa-btn fa-list-alt"></i> All interviews</a></li>
+                            <li><a href="{{ url('admin/interviews/create') }}"><i class="fa fa-btn fa-plus-square"></i> New interview</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -92,7 +92,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
                             </ul>
                         </li>
                     @endif

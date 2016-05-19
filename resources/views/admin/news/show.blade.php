@@ -9,7 +9,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-3">
-                                <img class="img-responsive" src="{{config('portal.uploads') . 'news/' . $record->picture}}" alt="{{  $record->title }}">
+                                <img class="img-responsive" src="{{ url('/images/news/'.$record->picture) }}" alt="{{  $record->title }}">
                             </div>
                             <div class="col-md-9">
                                 {!! $record->body !!}

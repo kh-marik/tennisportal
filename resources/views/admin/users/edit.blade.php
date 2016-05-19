@@ -18,7 +18,7 @@
                         {!! Form::label('is_admin', 'Is user admin?') !!}
                         {!! Form::select('is_admin', array('1' => 'Yep', '0' => 'Nope'), '0') !!}
                         <br/>
-                        {!! Form::submit('Update user!') !!}
+                        {!! Form::submit('Update user!', ["class" => "btn btn-default"]) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>

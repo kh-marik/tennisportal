@@ -22,7 +22,9 @@ class NewsCategoryController extends Controller
     }
     public function show($id)
     {
-        $category = NewsCategory::with(['news.users'])->find($id);
+        $category = NewsCategory::with(['news' => function($query){
+            $query->orderBy('id', 'desc');
+        }])->find($id);
         return view('admin.newscategories.show', ['category' => $category]);
     }
     public function create()

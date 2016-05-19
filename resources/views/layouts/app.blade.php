@@ -39,7 +39,6 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/news') }}">News</a></li>
-                    <li><a href="{{ url('/articles') }}">Articles</a></li>
                     <li><a href="{{ url('/interviews') }}">Interviews</a></li>
                 </ul>
 
@@ -57,9 +56,9 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 @if(Auth::user()->is_admin)
-                                    <li><a href="{{ url('/admin') }}"><i class="fa fa-btn fa-paw"></i>Admin</a></li>
+                                    <li><a href="{{ url('/admin') }}"><i class="fa fa-btn fa-paw"></i> Admin</a></li>
                                 @endif
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
                             </ul>
                         </li>
                     @endif

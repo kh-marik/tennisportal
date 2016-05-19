@@ -11,11 +11,11 @@
                         </div>
                     @else
                         <div class="panel-body">
-                            <ol>
+                            <ul class="list-group">
                                 @foreach($category->news as $news)
-                                    <li><a href="{{ url("/admin/news/$news->id") }}">{{ $news->title }}</a></li>
+                                    <li class="list-group-item">{{ $news->id }}. <a href="{{ url("/admin/news/$news->id") }}">{{ $news->title }}</a></li>
                                 @endforeach
-                            </ol>
+                            </ul>
                         </div>
                     @endif
                 </div>

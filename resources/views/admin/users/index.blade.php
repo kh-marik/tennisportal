@@ -26,10 +26,10 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td><a href="{{ url('/admin/users/'. $user->id .'/edit') }}">Edit</a></td>
+                                    <td><a class="btn btn-default" href="{{ url('/admin/users/'. $user->id .'/edit') }}">Edit</a></td>
                                     <td>
                                         {{ Form::open(['url' => 'admin/users/'.$user->id, 'method' => 'delete']) }}
-                                        {!! Form::submit('Delete user!') !!}
+                                        {!! Form::submit('Delete user!', ["class" => "btn btn-default"]) !!}
                                         {{ Form::close() }}
                                     </td>
                                 </tr>
