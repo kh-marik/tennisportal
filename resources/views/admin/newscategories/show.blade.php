@@ -13,7 +13,7 @@
                         <div class="panel-body">
                             <ol>
                                 @foreach($category->news as $news)
-                                    <li>{{ $news->title }}</li>
+                                    <li><a href="{{ url("/admin/news/$news->id") }}">{{ $news->title }}</a></li>
                                 @endforeach
                             </ol>
                         </div>

@@ -13,13 +13,13 @@
                         {!! Form::label('description', 'Description',['class' => 'control-label']) !!}
                         {!! Form::text('description', $interview->description,['class' => 'form-control']) !!}
                         {!! Form::label('body', 'Body',['class' => 'control-label']) !!}
-                        {!! Form::textarea('body', $interview->body, ['class' => 'form-control']) !!}
+                        {!! Form::textarea('body', $interview->body, ['class' => 'form-control ckeditor', 'id' => 'editor']) !!}
                         <br><br>
                         {!! Form::hidden('pic', 'present') !!}
                         {!! Form::label('picture', 'Picture',['class' => 'control-label']) !!}
                         {!! Form::file('picture', ['class' => 'form-control']) !!}
                         <br><br>
-                        {!! Form::submit('Update interview') !!}
+                        {!! Form::submit('Update interview', ["class" => "btn btn-default"]) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>
@@ -27,4 +27,7 @@
         </div>
         @include('partials.redirectback')
     </div>
+    <script type="text/javascript">
+        CKEDITOR.replace( 'editor' );
+    </script>
 @endsection

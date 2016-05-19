@@ -12,7 +12,7 @@
                                 <img class="img-responsive" src="{{config('portal.uploads') . 'interviews/' . $interview->picture}}" alt="{{  $interview->title }}">
                             </div>
                             <div class="col-md-9">
-                                {{ $interview->body }}
+                                {!! $interview->body !!}
                             </div>
                         </div>
                     </div>

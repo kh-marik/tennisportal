@@ -13,7 +13,7 @@
                         {!! Form::label('name', 'Category name') !!}
                         {!! Form::text('name', $category->name, ['class' => 'form-control']) !!}
                         <br>
-                        {!! Form::submit('Update category') !!}
+                        {!! Form::submit('Update category', ["class" => "btn btn-default"]) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>

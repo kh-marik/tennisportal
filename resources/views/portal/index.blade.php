@@ -10,20 +10,24 @@
                         {{--<div class="panel-body">--}}
                         {{--</div>--}}
                         <ul class="list-group">
-                            @foreach($mannews as $record)
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="{{ url('/news/'.$record->id) }}">
-                                                <img class="media-object img-responsive img-thumbnail center-block" style="max-width:64px"; src="{{config('portal.uploads') . 'news/' . $record->picture}}" alt="{{  $record->title }}">
-                                            </a>
+                            @if(count($mannews) > 0)
+                                @foreach($mannews as $record)
+                                    <li class="list-group-item">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a data-lightbox="{{ $record->title }}" href="{{ url('images/news/'.$record->picture) }}">
+                                                    <img class="media-object img-responsive img-thumbnail center-block" style="max-width:64px" ; src="{{ url('images/news/'.$record->picture) }}" alt="{{  $record->title }}">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading"><a href="{{ url('/news/'.$record->id) }}">{{ $record->title }}</a></h5>
+                                            </div>
                                         </div>
-                                        <div class="media-body">
-                                            <h5 class="media-heading"><a href="{{ url('/news/'.$record->id) }}">{{ $record->title }}</a></h5    >
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
+                                    </li>
+                                @endforeach
+                            @else
+                                <li class="list-group-item alert alert-danger">There is no news in this category!</li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -33,20 +37,24 @@
                         {{--<div class="panel-body">--}}
                         {{--</div>--}}
                         <ul class="list-group">
-                            @foreach($womannews as $record)
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="{{ url('/news/'.$record->id) }}">
-                                                <img class="media-object img-responsive img-thumbnail center-block" style="max-width:64px"; src="{{config('portal.uploads') . 'news/' . $record->picture}}" alt="{{  $record->title }}">
-                                            </a>
+                            @if(count($womannews) > 0)
+                                @foreach($womannews as $record)
+                                    <li class="list-group-item">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a data-lightbox="{{ $record->title }}" href="{{ url('images/news/'.$record->picture) }}">
+                                                    <img class="media-object img-responsive img-thumbnail center-block" style="max-width:64px" ; src="{{ url('images/news/'.$record->picture) }}" alt="{{  $record->title }}">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading"><a href="{{ url('/news/'.$record->id) }}">{{ $record->title }}</a></h5>
+                                            </div>
                                         </div>
-                                        <div class="media-body">
-                                            <h5 class="media-heading"><a href="{{ url('/news/'.$record->id) }}">{{ $record->title }}</a></h5>
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
+                                    </li>
+                                @endforeach
+                            @else
+                                <li class="list-group-item alert alert-danger">There is no news in this category!</li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -61,20 +69,26 @@
                         {{--<div class="panel-body">--}}
                         {{--</div>--}}
                         <ul class="list-group">
-                            @foreach($interviews as $interview)
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="{{ url('/interview/'.$interview->id) }}">
-                                                <img class="media-object img-responsive img-thumbnail pull-left" style="max-width: 64px;" src="{{config('portal.uploads') . 'interviews/' . $interview->picture}}" alt="{{  $record->title }}">
-                                            </a>
+                            @if(count($interviews) > 0)
+                                @foreach($interviews as $interview)
+                                    <li class="list-group-item">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a data-lightbox="{{ $interview->title }}" href="{{ url('images/interviews/'.$interview->picture) }}">
+                                                    <img class="media-object img-responsive img-thumbnail pull-left" style="max-width: 64px;" src="{{ url('images/interviews/'.$interview->picture) }}" alt="{{  $record->title }}">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading">
+                                                    <a href="{{ url('/interview/'.$interview->id) }}">{{ $interview->title }}</a>
+                                                </h5>
+                                            </div>
                                         </div>
-                                        <div class="media-body">
-                                            <h5 class="media-heading"><a href="{{ url('/interview/'.$interview->id) }}">{{ $interview->title }}</a></h5>
-                                        </div>
-</div>
-                                </li>
-                            @endforeach
+                                    </li>
+                                @endforeach
+                            @else
+                                <li class="list-group-item alert alert-danger">There is no interviews!</li>
+                            @endif
                         </ul>
                     </div>
                 </div>

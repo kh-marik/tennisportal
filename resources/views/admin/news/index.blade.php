@@ -37,11 +37,11 @@
                                         <td>{{ $new->created_at }}</td>
                                         <td>{{ $new->users->name }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/news/'. $new->id .'/edit') }}">Edit</a>
+                                            <a class='btn btn-default' href="{{ url('/admin/news/'. $new->id .'/edit') }}">Edit</a>
                                         </td>
                                         <td>
                                             {{ Form::open(['url' => 'admin/news/'.$new->id, 'method' => 'delete']) }}
-                                            {!! Form::submit('Delete record') !!}
+                                            {!! Form::submit('Delete record', ['class' => 'btn btn-default']) !!}
                                             {{ Form::close() }}
                                         </td>
                                     </tr>

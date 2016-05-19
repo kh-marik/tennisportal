@@ -12,7 +12,7 @@
                                 <img class="img-responsive" src="{{config('portal.uploads') . 'news/' . $record->picture}}" alt="{{  $record->title }}">
                             </div>
                             <div class="col-md-9">
-                                {{ $record->body }}
+                                {!! $record->body !!}
                             </div>
                         </div>
                     </div>

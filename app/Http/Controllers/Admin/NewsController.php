@@ -2,6 +2,7 @@
     namespace tennisportal\Http\Controllers\Admin;
 
     use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\Cache;
     use tennisportal\Http\Controllers\Controller;
     use tennisportal\Http\Requests;
     use tennisportal\News;
@@ -44,6 +45,7 @@
             $this->validateRecord($request);
             $this->uploadPicture($request);
             $request->user()->news()->create($this->getFields($request));
+            Cache::flush();
             return redirect('admin/news')->with('message', 'Record created');
         }
 
@@ -59,6 +61,7 @@
             $this->validateRecord($request);
             $this->uploadPicture($request, $record);
             $request->user()->news()->where('id', '=', $id)->update($this->getFields($request));
+            Cache::flush();
             return redirect('admin/news')->with('message', 'Record updated');
         }
 
@@ -66,6 +69,7 @@
         {
             $record = News::findOrFail($id);
             $record->delete();
+            Cache::flush();
             return redirect('/admin/news')->with('message', 'Record deleted');
         }
 

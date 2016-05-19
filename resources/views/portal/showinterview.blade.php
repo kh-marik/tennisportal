@@ -10,10 +10,10 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-3">
-                                <img class="img-responsive" src="{{config('portal.uploads') . 'interviews/' . $interview->picture}}" alt="{{  $interview->title }}">
+                                <a data-lightbox="{{ $interview->title }}" href="{{ url('images/interviews/'.$interview->picture) }}"><img class="img-responsive" src="{{ url('images/interviews/'.$interview->picture) }}" alt="{{  $interview->title }}"></a>
                             </div>
                             <div class="col-md-9">
-                                {{ $interview->body }}
+                                {!! $interview->body !!}
                             </div>
                         </div>
                     </div>

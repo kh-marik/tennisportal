@@ -32,11 +32,11 @@
                                             <span class="badge">{{ count($category->news) }}</span>
                                         </td>
                                         <td>
-                                            <a href="{{ url('/admin/newscategories/'. $category->id .'/edit') }}">Edit</a>
+                                            <a class="btn btn-default" href="{{ url('/admin/newscategories/'. $category->id .'/edit') }}">Edit</a>
                                         </td>
                                         <td>
                                             {{ Form::open(['url' => 'admin/newscategories/'.$category->id, 'method' => 'delete']) }}
-                                            {!! Form::submit('Delete category!') !!}
+                                            {!! Form::submit('Delete category!', ["class" => "btn btn-default"]) !!}
                                             {{ Form::close() }}
                                         </td>
                                     </tr>

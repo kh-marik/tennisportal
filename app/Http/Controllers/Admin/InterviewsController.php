@@ -3,7 +3,7 @@
 namespace tennisportal\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Cache;
 use tennisportal\Http\Requests;
 use tennisportal\Http\Controllers\Controller;
 use tennisportal\Interviews;
@@ -26,6 +26,7 @@ class InterviewsController extends Controller
         $this->validateRecord($request);
         $this->uploadPicture($request);
         $request->user()->interviews()->create($this->getFields($request));
+        Cache::flush();
         return redirect('admin/interviews')->with('message', 'Interview created');
     }
 
@@ -47,6 +48,7 @@ class InterviewsController extends Controller
         $this->validateRecord($request);
         $this->uploadPicture($request, $interview);
         $request->user()->interviews()->where('id', '=', $id)->update($this->getFields($request));
+        Cache::flush();
         return redirect('admin/interviews')->with('message', 'Interview updated');
     }
 

@@ -35,11 +35,11 @@
                                         </td>
                                         <td>{{ $interview->created_at }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/interviews/'. $interview->id .'/edit') }}">Edit</a>
+                                            <a class="btn btn-default" href="{{ url('/admin/interviews/'. $interview->id .'/edit') }}">Edit</a>
                                         </td>
                                         <td>
                                             {{ Form::open(['url' => 'admin/interviews/'.$interview->id, 'method' => 'delete']) }}
-                                            {!! Form::submit('Delete record') !!}
+                                            {!! Form::submit('Delete record', ["class" => "btn btn-default"]) !!}
                                             {{ Form::close() }}
                                         </td>
                                     </tr>
