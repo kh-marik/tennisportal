@@ -77,6 +77,15 @@
                             <li><a href="{{ url('admin/interviews/create') }}"><i class="fa fa-btn fa-plus-square"></i> New interview</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Comments <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('admin/comments') }}"><i class="fa fa-btn fa-list-alt"></i> All comments</a></li>
+                            <li><a href="{{ url('admin/comments/notapproved') }}"><i class="fa fa-btn fa-plus-square"></i> Not approved</a></li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

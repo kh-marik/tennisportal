@@ -30,10 +30,18 @@
                                 @foreach($record->comments as $comment)
                                     <p style="background: #666; color: #fff; padding: 5px; border-radius: 3px;">
                                         <strong>{{ $comment->user->name }}</strong> @ <strong><i>{{ $comment->created_at }}</i></strong></p>
-                                    <p style="background: #eee; padding: 5px 25px; border-radius: 3px;"> -> {{ $comment->comment }}</p>
+                                    <p style="background: #eee; padding: 5px 25px; border-radius: 3px;"> -> {{ $comment->comment }}
+                                        @if(Auth::check())
+                                            @if(Auth::user()->id == $comment->user->id || Auth::user()->is_admin)
+                                                <span><a class="btn-sm btn-default" href="{{ url("news/$record->id/comment/$comment->id/delete") }}">Delete</a></span>
+                                            @endif
+                                        @endif
+                                    </p>
                                 @endforeach
                             @else
-                                <p style="background: #666; color: #fff; padding: 5px; border-radius: 3px;">There is no comments for this record, be first and wright your own comment!</p>
+                                <p style="background: #666; color: #fff; padding: 5px; border-radius: 3px;">
+                                    There is no comments for this record, be first and wright your own comment!
+                                </p>
                             @endif
                             @if(Auth::check())
                                 <br>
