@@ -2,6 +2,7 @@
     namespace tennisportal\Http\Controllers;
 
     use Illuminate\Support\Facades\Cache;
+    use tennisportal\Comments;
     use tennisportal\Http\Requests;
     use tennisportal\Interviews;
     use tennisportal\News;
@@ -52,18 +53,21 @@
         }
 
         public function shownewsrecord($id){
+
             $record = Cache::remember('record_'.$id, 60, function() use ($id) {
                 return News::with('users')->with('newscategories')->findOrFail($id);
             });
-            return view('portal.shownews', ['record' => $record]);
+            $record->comments = Cache::remember('comments_for_record_'.$id, 60, function() use ($id) {
+                return Comments::with('user')->where('news_id', $id)->where('approved', 1)->orderBy('created_at', 'desc')->get();
+            });
+            return view('portal.shownews', compact('record'));
         }
 
         public function showallinterviews()
         {
-            //$interviews = Cache::remember('allinterviews', 60, function() {
-            //    return Interviews::orderBy('id', 'desc')->with('users')->paginate(config('3'));
-            //});
-            $interviews = Interviews::orderBy('id', 'desc')->with('users')->paginate(config('portal.posts_per_page'));
+            $interviews = Cache::remember('allinterviews', 60, function() {
+                return Interviews::orderBy('id', 'desc')->with('users')->paginate(config('portal.posts_per_page'));
+            });
             return view('portal.allinterviews', ['interviews' => $interviews]);
         }
 

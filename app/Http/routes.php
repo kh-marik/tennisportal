@@ -14,17 +14,18 @@
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
     Route::get('/', 'PortalController@index');
-    Route::get('/news', 'PortalController@showallnews');
-    Route::get('/news/{id}', 'PortalController@shownewsrecord');
-    Route::get('/interviews', 'PortalController@showallinterviews');
-    Route::get('/interview/{id}', 'PortalController@showinterview');
-    Route::get('/category/{id}', 'PortalController@newscategory');
+    Route::get('news', 'PortalController@showallnews');
+    Route::get('news/{id}', 'PortalController@shownewsrecord');
+    Route::get('interviews', 'PortalController@showallinterviews');
+    Route::get('interview/{id}', 'PortalController@showinterview');
+    Route::get('category/{id}', 'PortalController@newscategory');
 
-    Route::get('/admin', 'Admin\AdminController@index');
+    Route::get('admin', 'Admin\AdminController@index');
     Route::resource('admin/users', 'Admin\UserController');
     Route::resource('admin/newscategories', 'Admin\NewsCategoryController');
     Route::resource('admin/news', 'Admin\NewsController');
     Route::resource('admin/interviews', 'Admin\InterviewsController');
-    Route::get('config', 'Admin\ConfigController@getConfig');
 
+
+    Route::post('news/{id}/addcomment', 'CommentsController@store');
 });
